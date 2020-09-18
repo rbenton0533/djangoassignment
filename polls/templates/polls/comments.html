@@ -1,0 +1,19 @@
+
+<b class="text-center">
+<h1> Suggestions page <small>Make your suggestions here!</small></h1>
+</b>
+<form action="{% url 'polls:suggestions' %}" method="post">
+<p class="text-center">
+
+{% csrf_token %}
+	<g class="text-uppercase">
+		<u>First and Last Name: </u> <br>
+					</g>
+	<input type="text" name="getname"><br>
+	<a class="text-uppercase">
+		<u> Comment: </u> <br>
+	</a>
+	<textarea class = "form-control" rows="5" cols = "2" name = "commentChoice"><textarea>
+
+	<input type="submit" class="text-info" value="Make comment">
+</form>

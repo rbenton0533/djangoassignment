@@ -23,4 +23,10 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
     def __str__(self):
                 return self.choice_text
+
+class Comments(models.Model):
+    name_field = models.CharField(max_length = 50, default = "ANON")
+    comment_text = models.TextField()
+    def __str__(self):
+        return self.comment_text
 # Create your models here.
