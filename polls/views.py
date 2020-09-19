@@ -31,10 +31,11 @@ class ResultsView(generic.DetailView):
 
 def comments(request):
     if request.method == 'POST':
-        name_field = request.POST.get('getname')
-        comment_text = request.POST.get('commentChoice')
+        name_field = request.POST.get('name_field')
+        comment_text = request.POST.get('comment_text')
         commentObject = Comment(name_field = name_field, comment_text = comment_text)
         commentObject.save()
+        comments = Comment.objects.all()
     return render(request, 'polls/comment.html',{'comment': comments})
 
 def commentslist(request):
